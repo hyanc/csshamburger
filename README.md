@@ -1,2 +1,4 @@
+![csshamburger](https://raw.githubusercontent.com/hyanc/csshamburger/master/preview.png)
+
 # csshamburger
-Hamburger menu with CSS only
+Simple trick using css checked event, with invisible checkbox
