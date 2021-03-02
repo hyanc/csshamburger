@@ -1,39 +1,53 @@
+<!DOCTYPE html>
 <html>
 	<head>
+		<title>COMPANY</title>
+		<meta charset="UTF-8" />
 		<meta content="width=device-width,initial-scale=1,shrink-to-fit=no" name="viewport" />
 		<meta content="yes" name="apple-mobile-web-app-capable" />
 		<meta content="yes" name="mobile-web-app-capable" />
 		<style>
-			body {margin:0;padding:0;font-family:arial;background-color:grey}
+			/** color **/
+			body {background-color:grey}
+			#header, a, nav, nav input {background-color:yellow;color:black;border-color:black}
+
+			/** structure **/
+			body, ul, form, nav {margin:0;padding:0;font-family:arial;}
 			.both {overflow:hidden;width:100%}
 			.left {float:left;}
-			.right {float:right}
-			#header, ul {background-color:yellow}
-			h1 {margin:0;padding:20px;font-size:30px;}
-			label {font-size:50px;display:none;cursor:pointer}
-			ul {margin-top:25px;}
+			.right {float:right;}
+			h1 {margin:0;padding:14px;font-size:30px;}
+			h1 sup {font-weight:normal;font-size:15px}
+			label {font-size:42px;display:none;cursor:pointer;padding:6px;margin-right:10px;}
+			input {
+				-webkit-appearance:none; -moz-appearance:none; appearance:none;
+				margin:16px; padding:5px; font-size:17px;
+				border-radius:4px; border-style:solid; border-width:1px;
+				width:18vw; background-color:transparent; outline:none;
+			}
 			ul li {
 				list-style:none;
 				padding:20px;
-				display:inline;
+				height:auto;
+				display:inline-block;
 				font-size:20px;
+				cursor:pointer;
 			}
+			nav ul li a {text-decoration:none;}
 			#toggle {display:none}
 			@media (max-width: 768px) {
-				label {display:inline;line-height:76px;padding-right:20px}
+				nav {display:none}
+				ul, form {float:none!important}
+				input {display:block;width:calc(100% - 48px);}
+				label {display:inline;}
 				ul li {display:block;}
-				ul {
-					padding:20px 0 0 0;
-					display:none;
-					position:absolute;
-					z-index:1;
-					top:60px;
-					left:0px;
-					width:100%;
-					height:100%;
-					margin:0
+				nav {
+					position:absolute; z-index:1;
+					top:44px; left:0px;
+					width:100%; height:100%;
+					padding:20px 0 0 0; margin:0;
 				}
-				#toggle:checked ~ ul {display:block}
+				#toggle:checked ~ nav {display:block}
 			}
 		</style>
 	</head>
@@ -41,12 +55,17 @@
 		<div class="both" id="header">
 			<input type="checkbox" id="toggle">
 			<label for="toggle" class="right">&#8801;</label>
-			<h1 class="left">COMPANY</h1>
-			<ul class="left">
-				<li>Products</li>
-				<li>Services</li>
-				<li>About Us</li>
-			</ul>
+			<h1 class="left">COMPANY<sup>&trade;</sup></h1>
+			<nav>
+				<form class="right" action="" method="get">
+					<input name="search" placeholder="Search here" />
+				</form>
+				<ul class="left">
+					<li><a href="?">Products</a></li>
+					<li><a href="?">Services</a></li>
+					<li><a href="?">About Us</a></li>
+				</ul>
+			</nav>
 		</div>
 	</body>
 </html>
