@@ -11,12 +11,23 @@
 		<link rel="icon" href="data:," />
 		<style>
 			body, #header ul {font-family:arial;margin:0;padding:0}
-			#header {text-align:center;background-color:#F9F9F8;width:100%;overflow:hidden}
+			#header {text-align:center;width:100%;overflow:hidden;border-bottom-style:solid}
 			#header h2, #hamburger {display:none;margin:0}
 			#header li {list-style:none;display:inline-block;}
+			#selected a {font-weight:bold;border-bottom-width:2px;border-bottom-style:solid}
 			#header a {display:block;text-decoration:none}
-			#header a,#header h2, #hamburger {padding:30px;font-size: 25px;color:#454544}
 			#navCheckbox {display:none}
+
+			/*color*/
+			body {background-color:#FFFFFF;}
+			#header {background-color:#FFFFFF;border-color:#F5F3F3}
+			#header a {color:#62615C;}
+			#selected a, #header a:hover {color:#434443!important}
+			#selected a {border-color:#434443}
+
+
+			/*metrics*/
+			#header a, #header h2, #hamburger {padding:30px;font-size: 25px;border-bottom-width:2px;}
 
 			@media (max-width: 820px) { /*Mobile Phone*/
 				#header {text-align:left}
@@ -26,7 +37,7 @@
 				#hamburger {float:right;cursor:pointer}
 				#header ul {overflow:auto;width:100%;display:none}
 				#navCheckbox:checked ~ ul {display:block;height:1000px}
-				#navCheckbox:checked ~ ul li a {animation:navStart .3s forwards}
+				#navCheckbox:checked ~ ul li a {animation:navStart .4s forwards}
 				@keyframes navStart {
 					from {padding-top:0px;color:#F9F9F8}
 					to {padding-top:30px;color:#454544}
