@@ -11,16 +11,17 @@
 		<link rel="icon" href="data:," />
 		<style>
 			body, #header ul {font-family:arial;margin:0;padding:0}
-			#header {text-align:center;width:100%;overflow:hidden;border-bottom-style:solid}
-			#header h2, #hamburger {display:none;margin:0}
+			#header {text-align:center;border-bottom-style:solid}
+			#header h2, #hamburger, #navCheckbox {display:none;margin:0}
 			#header li {list-style:none;display:inline-block;}
 			#selected a {font-weight:bold;border-bottom-width:2px;border-bottom-style:solid}
 			#header a {display:block;text-decoration:none}
-			#navCheckbox {display:none}
+
+			.clearFloat {width:100%;overflow:hidden;}
 
 			/*color*/
-			body {background-color:#FFFFFF;}
-			#header {background-color:#FFFFFF;border-color:#F5F3F3}
+			body, #header {background-color:#FFFFFF;}
+			#header {border-color:#F5F3F3}
 			#header a {color:#62615C;}
 			#selected a, #header a:hover {color:#434443!important}
 			#selected a {border-color:#434443}
@@ -35,7 +36,7 @@
 				#selected {display:none!important}
 				#header h2 {float:left}
 				#hamburger {float:right;cursor:pointer}
-				#header ul {overflow:auto;width:100%;display:none}
+				#header ul {display:none}
 				#navCheckbox:checked ~ ul {display:block;height:1000px}
 				#navCheckbox:checked ~ ul li a {animation:navStart .4s forwards}
 				@keyframes navStart {
@@ -46,11 +47,11 @@
 		</style>
 	</head>
 	<body>
-		<div id="header">
+		<div id="header" class="clearFloat">
 			<h2>Mango</h1>
 			<input type="checkbox" id="navCheckbox" />
 			<label for="navCheckbox" id="hamburger">&#8801;</label>
-			<ul>
+			<ul class="clearFloat">
 				<li id="selected"><a href="#">Mango</a></li>
 				<li><a href="#">Apple</a></li>
 				<li><a href="#">Orange</a></li>
