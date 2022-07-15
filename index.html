@@ -10,36 +10,36 @@
 		<meta charset="utf-8" />
 		<link rel="icon" href="data:," />
 		<style>
-			body, #header ul {font-family:arial;margin:0;padding:0}
-			#header {text-align:center;border-bottom-style:solid}
-			#header h2, #hamburger, #navCheckbox {display:none;margin:0}
-			#header li {list-style:none;display:inline-block;}
+			body, header ul {font-family:arial;margin:0;padding:0}
+			header {text-align:center;border-bottom-style:solid}
+			header h2, #hamburger, #navCheckbox {display:none;margin:0}
+			header li {list-style:none;display:inline-block;}
 			#selected a {font-weight:bold;border-bottom-width:2px;border-bottom-style:solid}
-			#header a {display:block;text-decoration:none}
+			header a {display:block;text-decoration:none}
 
 			.clearFloat {width:100%;overflow:hidden;}
 
 			/*color*/
-			body, #header {background-color:#FFFFFF;}
-			#header {border-color:#F5F3F3}
-			#header a {color:#62615C;}
-			#selected a, #header a:hover {color:#434443!important}
+			body, header {background-color:#FFFFFF;}
+			header {border-color:#F5F3F3}
+			header a {color:#62615C;}
+			#selected a, header a:hover {color:#434443!important}
 			#selected a {border-color:#434443}
 
 
 			/*metrics*/
-			#header a, #header h2, #hamburger {padding:30px;font-size: 25px;border-bottom-width:2px;}
+			header a, header h2, #hamburger {padding:30px;font-size: 25px;border-bottom-width:2px;}
 
 			@media (max-width: 820px) { /*Mobile Phone*/
-				#header {text-align:left}
-				#header h2, #header li, #hamburger {display:block;}
+				header {text-align:left}
+				header h2, header li, #hamburger {display:block;}
 				#selected {display:none!important}
-				#header h2 {float:left}
+				header h2 {float:left}
 				#hamburger {float:right;cursor:pointer}
-				#header ul {display:none}
+				header ul {display:none}
 				#navCheckbox:checked ~ ul {display:block;height:1000px}
-				#navCheckbox:checked ~ ul li a {animation:navStart .4s forwards}
-				@keyframes navStart {
+				#navCheckbox:checked ~ ul li a {animation:headerAnim .4s forwards}
+				@keyframes headerAnim {
 					from {padding-top:0px;color:#F9F9F8}
 					to {padding-top:30px;color:#454544}
 				}
@@ -47,7 +47,7 @@
 		</style>
 	</head>
 	<body>
-		<div id="header" class="clearFloat">
+		<header class="clearFloat">
 			<h2>Mango</h1>
 			<input type="checkbox" id="navCheckbox" />
 			<label for="navCheckbox" id="hamburger">&#8801;</label>
@@ -57,6 +57,6 @@
 				<li><a href="#">Orange</a></li>
 				<li><a href="#">Lemon</a></li>
 			</ul>
-		</div>
+		</header>
 	</body>
 </html>
