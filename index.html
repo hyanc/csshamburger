@@ -14,7 +14,7 @@
 			header {text-align:center;border-bottom-style:solid}
 			header h2, #hamburger, #navCheckbox {display:none;margin:0}
 			header li {list-style:none;display:inline-block;}
-			#selected a {font-weight:bold;border-bottom-width:2px;border-bottom-style:solid}
+			#selected a {font-weight:bold;border-bottom-width:1px;border-bottom-style:solid}
 			header a {display:block;text-decoration:none}
 
 			.clearFloat {width:100%;overflow:hidden;}
@@ -28,20 +28,21 @@
 
 
 			/*metrics*/
-			header a, header h2, #hamburger {padding:30px;font-size: 25px;border-bottom-width:2px;}
+			header a, header h2, #hamburger {padding:1.6vw;font-size: 1.3vw;}
 
-			@media (max-width: 820px) { /*Mobile Phone*/
+			@media (max-width: 950px) { /*Mobile Phone*/
+				header a, header h2, #hamburger {padding:3.8vh;font-size: 3.1vh;}
 				header {text-align:left}
 				header h2, header li, #hamburger {display:block;}
 				#selected {display:none!important}
 				header h2 {float:left}
 				#hamburger {float:right;cursor:pointer}
 				header ul {display:none}
-				#navCheckbox:checked ~ ul {display:block;height:1000px}
+				#navCheckbox:checked ~ ul {display:block;height:100vh}
 				#navCheckbox:checked ~ ul li a {animation:headerAnim .4s forwards}
 				@keyframes headerAnim {
 					from {padding-top:0px;color:#F9F9F8}
-					to {padding-top:30px;color:#454544}
+					to {padding-top:3.8vh;color:#454544}
 				}
 			}
 		</style>
