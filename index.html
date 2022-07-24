@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 	<head>
 		<title>Mango</title>
 		<meta content="notranslate" name="google" />
@@ -11,48 +11,65 @@
 		<link rel="icon" href="data:," />
 		<style>
 			body, header ul {font-family:arial;margin:0;padding:0}
-			header {text-align:center;border-bottom-style:solid}
-			header h2, #hamburger, #navCheckbox {display:none;margin:0}
-			header li {list-style:none;display:inline-block;}
-			#selected a {font-weight:bold;border-bottom-width:1px;border-bottom-style:solid}
-			header a {display:block;text-decoration:none}
-
-			.clearFloat {width:100%;overflow:hidden;}
+			a {text-decoration:none;}
+			header {text-align:center;position:sticky;top:0;}
+			header h2, header label, #navCheck {display:none;margin:0}
+			header ul, #selected a {border-bottom-style:solid;}
+			header ul li, header ul li a {display:inline-block;}
+			#selected a {font-weight:bold}
+			header label {cursor:pointer}
 
 			/*color*/
-			body, header {background-color:#FFFFFF;}
-			header {border-color:#F5F3F3}
-			header a {color:#62615C;}
-			#selected a, header a:hover {color:#434443!important}
-			#selected a {border-color:#434443}
+			body, header {background-color:#FFFFFF}
+			header ul {border-bottom-color:#F5F3F3;}
+			header ul li a {color:#62615C;}
+			#selected a {border-color:#434443;}
+			#selected a, header ul li a:hover {color:#434443!important}
 
+			/*font size*/
+			header ul, #selected a  {border-bottom-width:2px;}
+			#selected a {margin-bottom:-2px;}
+			header ul li a, header h2, header label {font-size:1.3vw;}
 
-			/*metrics*/
-			header a, header h2, #hamburger {padding:1.6vw;font-size: 1.3vw;}
+			/*padding*/
+			header ul li a, header h2, header label {padding:1.6vw;}
 
-			@media (max-width: 950px) { /*Mobile Phone*/
-				header a, header h2, #hamburger {padding:3.8vh;font-size: 3.1vh;}
+			@media (max-width:950px) { /*Mobile Phone*/
+				header {border-bottom-style:solid}
+				header h2, header label, header ul li {display:block;}
+				header ul, #selected {display:none}
+				header, header ul {width:100%;overflow:hidden;}
 				header {text-align:left}
-				header h2, header li, #hamburger {display:block;}
-				#selected {display:none!important}
 				header h2 {float:left}
-				#hamburger {float:right;cursor:pointer}
-				header ul {display:none}
-				#navCheckbox:checked ~ ul {display:block;height:100vh}
-				#navCheckbox:checked ~ ul li a {animation:headerAnim .4s forwards}
-				@keyframes headerAnim {
+				header label {float:right;}
+				#navCheck:checked ~ ul {display:block;height:1000px}
+
+				/*font size*/
+				header {border-bottom-width:2px}
+				header ul li a, header h2, header label {font-size:3.1vh;}
+				
+				/*padding*/
+				header ul li a, header h2, header label {padding:3.8vh;}
+
+				/*color*/
+				header {border-bottom-color:#F5F3F3}
+
+				/*animation*/
+				#navCheck:checked ~ ul li a {animation:navAnim .4s forwards}
+
+				@keyframes navAnim {
 					from {padding-top:0px;color:#F9F9F8}
-					to {padding-top:3.8vh;color:#454544}
+					to {padding-top:30px;color:#454544}
 				}
 			}
 		</style>
 	</head>
 	<body>
-		<header class="clearFloat">
+		<header>
 			<h2>Mango</h1>
-			<input type="checkbox" id="navCheckbox" />
-			<label for="navCheckbox" id="hamburger">&#8801;</label>
-			<ul class="clearFloat">
+			<input type="checkbox" id="navCheck" />
+			<label for="navCheck">&#8801;</label>
+			<ul>
 				<li id="selected"><a href="#">Mango</a></li>
 				<li><a href="#">Apple</a></li>
 				<li><a href="#">Orange</a></li>
