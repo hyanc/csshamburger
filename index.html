@@ -1,80 +1,69 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 	<head>
-		<title>Mango</title>
-		<meta content="notranslate" name="google" />
-		<meta content="yes" name="mobile-web-app-capable" />
-		<meta content="yes" name="apple-mobile-web-app-capable" />
-		<meta content="width=device-width,initial-scale=1,shrink-to-fit=no" name="viewport" />
-		<meta content="telephone=no" name="format-detection" />
-		<meta charset="utf-8" />
-		<link rel="icon" href="data:," />
+		<title>Fruits</title>
+		<meta content="notranslate" name="google">
+		<meta content="yes" name="mobile-web-app-capable">
+		<meta content="yes" name="apple-mobile-web-app-capable">
+		<meta content="width=device-width,initial-scale=1,shrink-to-fit=no" name="viewport">
+		<link rel="icon" href="data:,">
+		<meta charset="utf-8">
 		<style>
-			body, header ul {font-family:arial;margin:0;padding:0}
-			a {text-decoration:none;}
-			header {text-align:center;position:sticky;top:0;}
-			header h2, header label, #navCheck {display:none;margin:0}
-			header ul, #selected a {border-bottom-style:solid;}
-			header ul li, header ul li a {display:inline-block;}
-			#selected a {font-weight:bold}
-			header label {cursor:pointer}
-
-			/*color*/
-			body, header {background-color:#FFFFFF}
-			header ul {border-bottom-color:#F5F3F3;}
-			header ul li a {color:#62615C;}
-			#selected a {border-color:#434443;}
-			#selected a, header ul li a:hover {color:#434443!important}
-
-			/*font size*/
-			header ul, #selected a  {border-bottom-width:2px;}
-			#selected a {margin-bottom:-2px;}
-			header ul li a, header h2, header label {font-size:1.3vw;}
-
-			/*padding*/
-			header ul li a, header h2, header label {padding:1.6vw;}
-
-			@media (max-width:950px) { /*Mobile Phone*/
-				header {border-bottom-style:solid}
-				header h2, header label, header ul li {display:block;}
-				header ul, #selected {display:none}
-				header, header ul {width:100%;overflow:hidden;}
-				header {text-align:left}
-				header h2 {float:left}
-				header label {float:right;}
-				#navCheck:checked ~ ul {display:block;height:1000px}
-
-				/*font size*/
-				header {border-bottom-width:2px}
-				header ul li a, header h2, header label {font-size:3.1vh;}
-				
-				/*padding*/
-				header ul li a, header h2, header label {padding:3.8vh;}
-
-				/*color*/
-				header {border-bottom-color:#F5F3F3}
-
-				/*animation*/
-				#navCheck:checked ~ ul li a {animation:navAnim .4s forwards}
-
-				@keyframes navAnim {
-					from {padding-top:0px;color:#F9F9F8}
-					to {padding-top:30px;color:#454544}
-				}
+			:root {
+				--bgCol		:#E6E6E6;
+				--headCol	:#FFFFFF;
+				--mainCol	:#000000;
+				--subCol	:#62615C;
+			}
+			body {margin:0;padding:0;font-family:arial;background-color:var(--bgCol)}
+			section, main {width:50vw;margin:0 auto;}
+			header {position:sticky;top:0;background-color:var(--headCol)}
+			header section {display:grid;grid-template-columns:auto auto;}
+			header div label {display:none;cursor:pointer;font-size:3.5vh}
+			header h2 {font-size:3vh;color:var(--mainCol)}
+			header input {display:none}
+			header ul {padding:0;align-items:center;display:flex;justify-content: right;}
+			header ul li {list-style:none;display:inline-block;margin-left:2vh;}
+			header ul li a {font-size:1.5vh;text-decoration:none;color:var(--subCol)}
+			#selected {color:var(--mainCol);font-weight:bolder}
+			
+			@media (max-width:950px) {
+				header, section {width:auto;}
+				header section {padding:2vh;display:block}
+				header div {width:auto;display:flex;height:4vh;align-items:center}
+				header div label {margin-left:auto;display:block;}
+				header input {display:inline-block;transform: scale(0.1);display:none;appearance:none;opacity:0;}
+				header ul {display:none;text-align:left;height:88vh}
+				header ul li {display:block;margin:0 0 2vh 0;}
+				header ul li a {font-size:3vh;}
+				header input:checked ~ ul {display:block;}
+				header input:checked ~ ul li {animation: ul-li .4s forwards ease-out;}
+				header input:checked ~ ul li a {animation: ul-li-a .4s forwards;}
+				#selected {font-weight:normal}
+				@keyframes ul-li { from {margin-bottom:0} to {margin-bottom:2vh} }
+				@keyframes ul-li-a { from {color:transparent} to {color:var(--mainCol)} }
 			}
 		</style>
 	</head>
 	<body>
 		<header>
-			<h2>Mango</h2>
-			<input type="checkbox" id="navCheck" />
-			<label for="navCheck">&#8801;</label>
-			<ul>
-				<li id="selected"><a href="#">Mango</a></li>
-				<li><a href="#">Apple</a></li>
-				<li><a href="#">Orange</a></li>
-				<li><a href="#">Lemon</a></li>
-			</ul>
+			<section>
+				<input type="checkbox" id="toggle">
+				<div>
+					<h2>Apple Fitness+</h2>
+					<label for="toggle">&#8801;</label>
+				</div>
+				<ul>
+					<li><a href="#">Mango</a></li>
+					<li><a href="#" id="selected">Apple</a></li>
+					<li><a href="#">Earth</a></li>
+					<li><a href="#">Orange</a></li>
+					<li><a href="#">Lemon</a></li>
+				</ul>
+			</section>
 		</header>
+		<main>
+			<!-- content -->
+		</main>
 	</body>
 </html>
