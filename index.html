@@ -16,7 +16,7 @@
 				--subCol	:#62615C;
 			}
 			body {margin:0;padding:0;font-family:arial;background-color:var(--bgCol)}
-			section, main {width:50vw;margin:0 auto;}
+			section, main {width:60vw;margin:0 auto;}
 			header {position:sticky;top:0;background-color:var(--headCol)}
 			header section {display:grid;grid-template-columns:auto auto;}
 			header div label {display:none;cursor:pointer;font-size:3.5vh}
@@ -27,6 +27,9 @@
 			header ul li a {font-size:1.5vh;text-decoration:none;color:var(--subCol)}
 			#selected {color:var(--mainCol);font-weight:bolder}
 			
+			@media (aspect-ratio: 16/9) {
+				section, main {width:50vw;}
+			}
 			@media (max-width:950px) {
 				header, section, main {width:auto;}
 				header section, main {padding:2vh;display:block}
@@ -50,7 +53,7 @@
 			<section>
 				<input type="checkbox" id="toggle">
 				<div>
-					<h2>Apple Fitness+</h2>
+					<h2>Fruits</h2>
 					<label for="toggle">&#8801;</label>
 				</div>
 				<ul>
